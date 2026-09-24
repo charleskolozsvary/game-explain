@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fdsymbol}
+\usepackage{xcolor}
+
+%% \usepackage{geometry}\geometry{top=0in,tmargin=1in,headheight=0.5in,headsep=0in}
+\usepackage{geometry}\geometry{margin=1in}
+
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{caption}
+
+\newcommand{\heart}{\textcolor{red}{$\varheartsuit$}}
+\renewcommand{\diamond}{\textcolor{red}{$\vardiamondsuit$}}
+\newcommand{\club}{$\clubsuit$}
+\newcommand{\spade}{$\spadesuit$}
+
+\title{{\textsc{Cambio card game rules}}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\textit{Cambio} is a memory card game played with a standard deck of cards. The goal of the game is to change the cards in your possesion so that their total is as low as possible. Whoever has the lowest card total at the end of the game wins.
+
+\subsection*{Card values}
+An Ace is worth $1$ point, number cards are worth their rank (e.g., a 7 is worth $7$ points), and face cards (Jack, Queen, King) are worth $10$ points with one exception: either red King (K\heart, K\diamond) is worth $-1$ points. Finally, Jokers are worth $0$ points.
+
+\section{Setup}
+Each player is dealt four cards \textbf{face down} in a $2\times2$ grid---no one is to look at them. After they're dealt, everyone can \textbf{briefly} look at the \textbf{two cards} closest to them. After this glance, \textbf{no one is allowed to look at their cards again.}\footnote{Unless certain cards are discarded, as discussed in Section~\ref{abilities}.}
+
+The undealt cards are placed in the center as a draw pile, and whoever is to the left of the dealer starts the game. Players take turns in clockwise order.
+
+
+\section{Your turn}
+Draw a card. Only you can look at it. Then choose one of two actions: 
+\begin{enumerate}[(1)]
+\item Discard the drawn card.
+\item Replace one of your face-down cards with the drawn card, then discard the replaced card.
+\end{enumerate}
+Discarded cards are always placed \textbf{face up} on the discard pile.
+
+
+\section{Card abilities}\label{abilities}
+When certain cards are discarded \textbf{immediately after they are drawn}, they allow you to take special actions
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{3.25in}|}
+\hline
+Card & Ability \\
+\hline
+7 or 8 & Look at one of \textbf{your own} cards\\
+\hline
+9 or 10 & Look at \textbf{someone else's} card \\
+\hline
+\multirow{2}{*}{Jack or Queen} & \textbf{Without looking at the cards' identities}, \\
+& swap any two players' cards \\
+\hline
+\multirow{2}{*}{Black King (K\club, K\spade)} & Look at \textbf{someone else's} card, \\
+& then swap any two players' cards\\
+\hline
+\end{tabular}
+\end{table}
+You aren't forced to use a card's ability, and cards lose their abilities after they are placed face down.
+
+
+\section{Matching}
+If you think that a face-down card has the same rank as the most recently discarded card, you can place the face-down card on top of the discard pile. This is called \textbf{matching}, and it may be done at \textbf{any time} during the game (i.e., out of turn). 
+
+You can attempt to match \textbf{any} face-down card, either one of your own or someone else's.
+\begin{itemize}
+\item If you successfully match one of \textbf{your own} cards, it does not need to be replaced.
+\item If you successfully match \textbf{someone else's} card, you get to replace it with one of your own.
+\end{itemize}
+Either way, you get to have one less card for the rest of the game.
+
+But if you match unsuccessfully, you \textbf{gain} a face-down card from the draw pile (and you are not allowed to look at it).
+
+\textbf{A match can happen at most one time.} If someone else beats you to a match, you're out of luck.
+\subsection*{Keeing it fair}
+Since matching is a race, you must do it using only one hand.
+This is to limit the advantage of a player who drew a card which they think has the same rank as one of the face-down cards.
+
+\section{When does the game end?}
+A player may call ``Cambio!'' at the end of their turn. After this, each remaining player takes one final turn, and the game ends at the beginning of the next turn of the player who called ``Cambio!'' If no one ever does, the game ends when there are no cards left to draw.
+\end{document}
